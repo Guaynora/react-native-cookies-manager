@@ -1,5 +1,14 @@
-import CookiesManager from './NativeCookiesManager';
+import CookiesManagerNative from './NativeCookiesManager';
 
-export function multiply(a: number, b: number): number {
-  return CookiesManager.multiply(a, b);
-}
+// Exportar el módulo nativo directamente
+export default CookiesManagerNative;
+
+// También exportar funciones individuales si prefieres importar así
+export const getCookies = CookiesManagerNative.getCookies;
+export const setCookie = CookiesManagerNative.setCookie;
+export const removeCookie = CookiesManagerNative.removeCookie;
+export const clearCookies = CookiesManagerNative.clearCookies;
+export const flush = CookiesManagerNative.flush;
+
+// Exportar tipos para TypeScript
+export type { Cookie } from './NativeCookiesManager';
